@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones</title>
+    <link href="./bootstrap-4.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/Estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./Img/Logo.jfif" alt="Logo" width="150" height="auto"> 
+        </a>
+    </nav>
+    <div class="container m-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header">
+                        Inscripciones
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombres y Apellidos</label>
+                                <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="genero">Género</label>
+                                <select class="form-control" id="genero">
+                                  <option></option>
+                                  <option>Masculino</option>
+                                  <option>Femenino</option>
+                                  <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="genero">Documento de Identidad</label>
+                                <select class="form-control" id="identidad">
+                                  <option></option>
+                                  <option>Cédula de Ciudadania</option>
+                                  <option>Tarjeta de Identidad</option>
+                                  <option>Registro Civil</option>
+                                  <option>Cédula de Extranjería</option>
+                                  <option>Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dia">Día y mes de nacimiento</label>
+                                <input type="text" class="form-control" id="dia" placeholder="Ej: 08-Junio">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha">Año de nacimiento</label>
+                                <input type="text" class="form-control" id="fecha" placeholder="Ej: 2008">
+                            </div>
+                            <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input type="text" class="form-control" id="edad">
+                            </div>
+                            <div class="form-group">
+                                <label for="pais">País de Nacimiento</label>
+                                <input type="text" class="form-control" id="pais" placeholder="Ej: Colombia">
+                            </div>
+                            <div class="form-group">
+                                <label for="lugar">Ciudad de Residencia</label>
+                                <input type="text" class="form-control" id="lugar" placeholder="Ej: Bogotá D.C">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form-control" id="direccion">
+                            </div>
+                            <div class="form-group">
+                                <label for="number">Número de Teléfono de Contacto</label>
+                                <input type="text" class="form-control" id="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="text" class="form-control" id="correo">
+                            </div>
+                            <div class="form-group">
+                                <label for="cancion">Géneros que canta</label>
+                                <input type="text" class="form-control" id="cancion" placeholder="Ej: Salsa, Balada, Pop">
+                            </div>
+                            <div class="form-group">
+                                <label for="namem">Nombre de tu Madre si eres menor de edad</label>
+                                <input type="text" class="form-control" id="namem">
+                            </div>
+                            <div class="form-group">
+                                <label for="namep">Nombre de tu padre si eres menor de edad</label>
+                                <input type="text" class="form-control" id="namep">
+                            </div>
+                            <button type="submit" class="btn btn-warning" onclick="validar()">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validar(){
+            let name = document.getElementById('name').value
+            let genero = document.getElementById('genero').value
+            let identidad = document.getElementById('identidad').value
+            let dia = document.getElementById('dia').value
+            let fecha = document.getElementById('fecha').value
+            let edad = document.getElementById('edad').value
+            let pais = document.getElementById('pais').value
+            let lugar = document.getElementById('lugar').value
+            let direccion = document.getElementById('direccion').value
+            let number = document.getElementById('number').value
+            let correo = document.getElementById('correo').value
+            let cancion = document.getElementById('cancion').value
+            let namem = document.getElementById('namem').value
+            let namep = document.getElementById('namep').value
+
+            if(Number(fecha) >= "1960" && Number(fecha) < "2006"){
+                alert("Tu año de nacimiento no es apto")
+            }else{
+                alert("Tu año de nacimiento es apto")
+            }
+            if(edad <= "15"){
+                alert("Haz sido inscrito satisfactoriamente, felicitaciones " + name + ".")
+            }else if(edad >= "60"){
+                alert("Haz sido inscrito satisfactoriamente, felicitaciones " + name + ".")
+            }else{
+                alert("No tienes la edad para poder inscribirte, lo sentimos mucho.")
+            }
+        }
+    </script>
+
+    <script src="./javascript.js"></script>
+    <script src="./bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
